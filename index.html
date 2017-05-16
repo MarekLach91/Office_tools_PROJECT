@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDo">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Office tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Sketch|Roboto|Gloria+Hallelujah" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Office tools</h1>
+        <ul id="ruler">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+        </ul>
+    </header>
+    <section class="one">
+        <div class="grid-container">
+            <div class="box_calcualtor">
+                <section class="calculator">
+                    <div class="area_result"></div>
+                </section>
+                <section class="calculator">
+                    <div class="button button_reset">C</div>
+                    <div class="button button_action">(</div>
+                    <div class="button button_action">)</div>
+                    <div class="button button_action">/</div>
+                </section>
+                <section class="calculator">
+                    <div class="button button_number">7</div>
+                    <div class="button button_number">8</div>
+                    <div class="button button_number">9</div>
+                    <div class="button button_action">x</div>
+                </section>
+                <section class="calculator">
+                    <div class="button button_number">4</div>
+                    <div class="button button_number">5</div>
+                    <div class="button button_number">6</div>
+                    <div class="button button_action">-</div>
+                </section>
+                <section class="calculator">
+                    <div class="button button_number">1</div>
+                    <div class="button button_number">2</div>
+                    <div class="button button_number">3</div>
+                    <div class="button button_action">+</div>
+                </section>
+                <section class="calculator">
+                    <div class="button button_action">.</div>
+                    <div class="button button_number">0</div>
+                    <div class="button button_action">%</div>
+                    <div class="button button_sum">=</div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <section class="two">
+        <div class="grid-container">
+            <div class="apptodo" ng-controller="todoController">
+                <h2>Tasks</h2>
+                <form name="frm" ng-submit="addTodo()">
+                    <input id="textarea" type="text" name="newtodo" ng-model="newTodo" required>
+                    <button ng-disabled="frm.$invalid">Add</button>
+
+                    <button id="clear" ng-click="clearCompleted()">Clear completed</button>
+                    <ul>
+                        <li ng-repeat="todo in todos">
+                            <input type="checkbox" ng-model="todo.done">
+                            <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</body>
+
+</html>
