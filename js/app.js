@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     controller('todoController', ['$scope', function($scope){
         $scope.todos = [
             
-            {'title':'Build a todo app', 'done':false}
+//            {'title':'', 'done':''}
         ];
         
         $scope.addTodo = function(){
